@@ -1,0 +1,31 @@
+{
+  "id": "cmrm4t4oc12wmet1jg9umpuq9",
+  "v": 2,
+  "name": "Logistics Platform",
+  "variables": [
+    {
+      "key": "base_url",
+      "secret": false,
+      "currentValue": "",
+      "initialValue": "http://localhost:8085"
+    },
+    {
+      "key": "logistics_access_token",
+      "secret": false,
+      "currentValue": "",
+      "initialValue": ""
+    },
+    {
+      "key": "logistics_refresh_token",
+      "secret": false,
+      "currentValue": "",
+      "initialValue": ""
+    },
+    {
+      "key": "logistics_token_expires_at",
+      "secret": false,
+      "currentValue": "",
+      "initialValue": ""
+    }
+  ]
+}

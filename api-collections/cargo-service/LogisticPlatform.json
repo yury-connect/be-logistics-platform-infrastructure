@@ -17,7 +17,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -32,14 +33,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrt9qt6500j2et1j0ln5y8p8"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -54,14 +56,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrta3r9s00jdet1jeogtjcqq"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -95,14 +98,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrta7c1w00jget1jkoks6rqh"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -117,14 +121,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtadb0z00joet1ja5phhoik"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -139,7 +144,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtafd490667e41jjsyfckpb"
             }
@@ -163,7 +168,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -178,14 +184,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtaj6iu00jyet1jpsgj5sk4"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -200,14 +207,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtajgt100jzet1jgzwc286h"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -241,14 +249,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtatv6k00kket1jxdpc9wt4"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -263,7 +272,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtav8yb067pe41jpdh2dk5s"
             }
@@ -287,7 +296,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -302,14 +312,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtb4e5z06ate41jf5gb9kbr"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -324,14 +335,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtbgbet00p7et1jdkz1plnh"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -365,14 +377,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtbhwqp00p8et1jk2z48vlg"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -406,14 +419,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtbjegb06foe41jdvvrxd5j"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -428,7 +442,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtbldht00pdet1j23apv6dv"
             }
@@ -452,7 +466,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -498,14 +513,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtbr9ry017net1j4pru45gf"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -551,14 +567,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtcfvl9019qet1jpq721ios"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -576,7 +593,7 @@
                 },
                 {
                   "key": "size",
-                  "value": "2",
+                  "value": "222",
                   "active": true,
                   "description": "2️⃣ кол-во на страницу"
                 },
@@ -604,7 +621,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// Проверяем, истек ли токен\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\nif (expiresAt && Date.now() > Number(expiresAt)) {\r\n    console.log(\"🔄 Токен истек, обновляем...\");\r\n    // Здесь нужно отправить запрос на обновление токена\r\n    // (это сложнее, для начала лучше обновлять вручную)\r\n}",
               "requestVariables": [],
               "id": "cmrtctptt01qpet1j7xl7sqid"
             },
@@ -664,7 +681,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -679,14 +697,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtcxfgc07d2e41jkjdguloj"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -701,7 +720,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtczl2b01qset1jx0vkza6k"
             }
@@ -725,7 +744,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -740,14 +760,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtddr0t01s3et1jeusn39n6"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -762,14 +783,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtdfy0y07d9e41j0poxebzw"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -784,14 +806,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrm6ic6l1o1ue41j1qblwmq0"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -806,14 +829,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtdh1b307dce41jy26faw2f"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -828,7 +852,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrtdof8i07dle41j12pdatms"
             }
@@ -852,7 +876,8 @@
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -880,14 +905,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrm527e21nxse41jckkvbet7"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -915,14 +941,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrm596xb1ny9e41jxucqnu98"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -937,14 +964,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrm5vbru1o0xe41jv1s2jb0i"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -959,14 +987,15 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrm5y8l713ktet1jmda3cign"
             },
             {
               "v": "17",
               "auth": {
-                "authType": "inherit",
+                "token": "<<logistics_access_token>>",
+                "authType": "bearer",
                 "authActive": true
               },
               "body": {
@@ -981,7 +1010,7 @@
               "responses": {},
               "testScript": "",
               "description": null,
-              "preRequestScript": "",
+              "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
               "requestVariables": [],
               "id": "cmrm9aju91onke41jn2ldkcyj"
             }
@@ -1201,7 +1230,8 @@
         {
           "v": "17",
           "auth": {
-            "authType": "inherit",
+            "token": "<<logistics_access_token>>",
+            "authType": "bearer",
             "authActive": true
           },
           "body": {
@@ -1235,9 +1265,32 @@
           "responses": {},
           "testScript": "",
           "description": null,
-          "preRequestScript": "",
+          "preRequestScript": "// ============================================================\r\n// PRE-REQUEST SCRIPT — проверка токена (без авто-обновления)\r\n// ============================================================\r\n\r\nconst expiresAt = pw.env.get(\"logistics_token_expires_at\");\r\n\r\nif (expiresAt) {\r\n    const now = Date.now();\r\n    const expiresIn = Number(expiresAt) - now;\r\n    \r\n    if (expiresIn < 60000) {\r\n        console.warn(\"⚠️ ТОКЕН ИСТЕКАЕТ! Обновите его вручную через запрос на /token\");\r\n        console.log(\"📝 Осталось:\", Math.round(expiresIn / 1000), \"сек\");\r\n    } else {\r\n        console.log(\"✅ Токен валидный, истекает через\", Math.round(expiresIn / 1000), \"сек\");\r\n    }\r\n} else {\r\n    console.warn(\"⚠️ Токен не найден! Запустите запрос на получение токена.\");\r\n}",
           "requestVariables": [],
           "id": "cmrm62ili13kxet1jk2gzsqez"
+        },
+        {
+          "v": "17",
+          "auth": {
+            "token": "<<logistics_access_token>>",
+            "authType": "none",
+            "authActive": true
+          },
+          "body": {
+            "body": "client_id: logistics-gateway\nusername: admin-platform\npassword: 1234\ngrant_type: password",
+            "contentType": "application/x-www-form-urlencoded"
+          },
+          "name": "KeyKloack-GetToken",
+          "method": "POST",
+          "params": [],
+          "headers": [],
+          "endpoint": "http://localhost:8080/realms/logistics-platform/protocol/openid-connect/token",
+          "responses": {},
+          "testScript": "// ============================================================\n// POST-REQUEST SCRIPT для Hoppscotch (универсальный)\n// ============================================================\n\ntry {\n    // Получаем данные ответа (работает с объектом и строкой)\n    let data = pw.response.body;\n\n    // Если это строка — парсим JSON\n    if (typeof data === 'string') {\n        data = JSON.parse(data);\n    }\n\n    // Если это объект — используем как есть\n    if (data && typeof data === 'object') {\n        // Сохраняем токены\n        if (data.access_token) {\n            pw.env.set(\"logistics_access_token\", data.access_token);\n            pw.env.set(\"logistics_refresh_token\", data.refresh_token);\n\n            if (data.expires_in) {\n                const expiresAt = String(Date.now() + (data.expires_in * 1000));\n                pw.env.set(\"logistics_token_expires_at\", expiresAt);\n            }\n\n            console.log(\"✅ Токен успешно сохранен!\");\n            console.log(\"📝 Токен:\", data.access_token.substring(0, 30) + \"...\");\n        } else {\n            console.error(\"❌ Токен НЕ найден в ответе!\");\n            console.log(\"📦 Ответ:\", data);\n        }\n    } else {\n        console.error(\"❌ Неизвестный формат ответа:\", typeof data);\n    }\n} catch (error) {\n    console.error(\"❌ Ошибка в скрипте:\", error.message);\n}",
+          "description": null,
+          "preRequestScript": "",
+          "requestVariables": [],
+          "id": "cms8ocuwi09fthk1ijan6dmnb"
         }
       ],
       "auth": {

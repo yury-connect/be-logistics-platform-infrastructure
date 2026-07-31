@@ -25,6 +25,36 @@ paths:
             type: string
           example: 'true'
           description: Предварительно УДАЛИТЬ ВСЁ!
+      security:
+        - bearerAuth: []
+  /realms/logistics-platform/protocol/openid-connect/token:
+    post:
+      summary: KeyKloack-GetToken
+      responses:
+        '200':
+          description: Successful response
+      operationId: KeyKloack_GetToken
+      tags:
+        - Cargo-Service
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                  example: logistics-gateway
+                username:
+                  type: string
+                  example: admin-platform
+                password:
+                  type: string
+                  example: '1234'
+                grant_type:
+                  type: string
+                  example: password
+      security: []
   /api/v1/catalog/addresses:
     post:
       summary: Адрес -СОЗДАТЬ
@@ -46,6 +76,8 @@ paths:
               house: 15
               block: А
               apartment: '122'
+      security:
+        - bearerAuth: []
     get:
       summary: Адрес -ПОЛУЧИТЬ ВСЕ
       responses:
@@ -70,6 +102,8 @@ paths:
           schema:
             type: string
           example: id
+      security:
+        - bearerAuth: []
   /api/v1/catalog/addresses/1:
     get:
       summary: Адрес -ПОЛУЧИТЬ по id
@@ -79,6 +113,8 @@ paths:
       operationId: ___id
       tags:
         - Cargo-Service/Address
+      security:
+        - bearerAuth: []
     put:
       summary: Адрес -ИЗМЕНИТЬ
       responses:
@@ -99,6 +135,8 @@ paths:
               house: 15
               block: А
               apartment: '122'
+      security:
+        - bearerAuth: []
   /api/v1/catalog/addresses/13:
     delete:
       summary: Адрес -УДАЛИТЬ
@@ -108,6 +146,8 @@ paths:
       operationId: ___3
       tags:
         - Cargo-Service/Address
+      security:
+        - bearerAuth: []
   /api/v1/catalog/locations:
     post:
       summary: Локация -СОЗДАТЬ
@@ -124,6 +164,8 @@ paths:
               rack: Стеллаж А
               shelf: Полка 7
               addressId: 2
+      security:
+        - bearerAuth: []
     get:
       summary: Локация -ПОЛУЧИТЬ ВСЕ
       responses:
@@ -148,6 +190,8 @@ paths:
           schema:
             type: string
           example: id
+      security:
+        - bearerAuth: []
   /api/v1/catalog/locations/1:
     get:
       summary: Локация -ПОЛУЧИТЬ по id
@@ -157,6 +201,8 @@ paths:
       operationId: ___id_2
       tags:
         - Cargo-Service/Location
+      security:
+        - bearerAuth: []
   /api/v1/catalog/locations/34:
     delete:
       summary: Локация -УДАЛИТЬ
@@ -169,6 +215,8 @@ paths:
       requestBody:
         content:
           application/json: {}
+      security:
+        - bearerAuth: []
   /api/v1/catalog/dimensions:
     post:
       summary: Габариты -СОЗДАТЬ
@@ -185,6 +233,8 @@ paths:
               length: 12.5
               width: 8.1
               height: 5
+      security:
+        - bearerAuth: []
     get:
       summary: Габариты -ПОЛУЧИТЬ ВСЕ
       responses:
@@ -209,6 +259,8 @@ paths:
           schema:
             type: string
           example: id
+      security:
+        - bearerAuth: []
   /api/v1/catalog/dimensions/1:
     get:
       summary: Габариты -ПОЛУЧИТЬ по id
@@ -218,6 +270,8 @@ paths:
       operationId: ___id_3
       tags:
         - Cargo-Service/Dimension
+      security:
+        - bearerAuth: []
     put:
       summary: Габариты -ПОЛУЧИТЬ ИЗМЕНИТЬ
       responses:
@@ -242,6 +296,8 @@ paths:
           schema:
             type: string
           example: id
+      security:
+        - bearerAuth: []
   /api/v1/catalog/dimensions/21:
     delete:
       summary: Габариты -УДАЛИТЬ
@@ -251,6 +307,8 @@ paths:
       operationId: ___7
       tags:
         - Cargo-Service/Dimension
+      security:
+        - bearerAuth: []
   /api/v1/catalog/skus:
     post:
       summary: Артикул -СОЗДАТЬ
@@ -279,6 +337,8 @@ paths:
             example:
               name: Ea-1024-2026
               description: Тестовый артикул
+      security:
+        - bearerAuth: []
     get:
       summary: Артикул -ПОЛУЧИТЬ ВСЕ-АГРЕГИРОВАНО
       responses:
@@ -328,6 +388,8 @@ paths:
             example:
               name: EB-1234-4321
               description: Фиговина непонятного происхождения
+      security:
+        - bearerAuth: []
     put:
       summary: Артикул -ИЗМЕНИТЬ
       responses:
@@ -342,6 +404,8 @@ paths:
             example:
               name: AA-1024-2026
               description: Тестовый1 артикул
+      security:
+        - bearerAuth: []
   /api/v1/catalog/skus/base:
     get:
       summary: Артикул -ПОЛУЧИТЬ ВСЕ
@@ -362,8 +426,10 @@ paths:
           in: query
           schema:
             type: string
-          example: '2'
+          example: '222'
           description: 2️⃣ кол-во на страницу
+      security:
+        - bearerAuth: []
   /api/v1/catalog/skus/21:
     delete:
       summary: Артикул -УДАЛИТЬ
@@ -379,6 +445,8 @@ paths:
             example:
               name: EB-1234-4321
               description: Фиговина непонятного происхождения
+      security:
+        - bearerAuth: []
   /api/v1/catalog/cargos:
     post:
       summary: Товар -СОЗДАТЬ
@@ -399,6 +467,8 @@ paths:
               dimensionId: 1
               price: 999.99
               locationId: 1
+      security:
+        - bearerAuth: []
     get:
       summary: просмотр имеющихся Cargo
       responses:
@@ -407,6 +477,8 @@ paths:
       operationId: _Cargo
       tags:
         - Cargo-Service/Cargo
+      security:
+        - bearerAuth: []
   /api/v1/catalog/cargos/1:
     get:
       summary: Товар -ПОЛУЧИТЬ
@@ -427,6 +499,8 @@ paths:
               dimensionId: 1
               price: 999.99
               locationId: 1
+      security:
+        - bearerAuth: []
     put:
       summary: Товар -ИЗМЕНИТЬ
       responses:
@@ -446,6 +520,8 @@ paths:
               dimensionId: 1
               price: 999.99
               locationId: 1
+      security:
+        - bearerAuth: []
   /api/v1/catalog/cargos/301:
     delete:
       summary: Товар -УДАЛИТЬ
@@ -466,6 +542,8 @@ paths:
               dimensionId: 1
               price: 999.99
               locationId: 1
+      security:
+        - bearerAuth: []
   /api/v1/catalog/reservations:
     get:
       summary: Просмотреть все активные
@@ -481,6 +559,8 @@ paths:
           schema:
             type: string
           example: 'true'
+      security:
+        - bearerAuth: []
     post:
       summary: Резервировать ПРОИЗВОЛЬНОЕ
       responses:
@@ -499,6 +579,8 @@ paths:
               - skuId: 2
                 quantity: 1
                 preferredCargoIds: []
+      security:
+        - bearerAuth: []
   /api/v1/catalog/reservations/1/cancel:
     patch:
       summary: Снять Резервирование ПРОИЗВОЛЬНОЕ
@@ -508,6 +590,8 @@ paths:
       operationId: __4
       tags:
         - Cargo-Service/Reservation
+      security:
+        - bearerAuth: []
   /api/v1/catalog/images/cargos/6a5647dd3e18f154149ed9a3:
     get:
       summary: САМА картинка CARGO по ее id (id картинки CARGO)
@@ -590,6 +674,7 @@ paths:
           example: '30'
 servers:
   - url: <<base_url>>
+  - url: http://localhost:8080
 tags:
   - name: Cargo-Service
   - name: Cargo-Service/Address
@@ -607,7 +692,8 @@ x-hoppscotch-dropped-requests:
     request:
       v: '17'
       auth:
-        authType: inherit
+        token: ''
+        authType: bearer
         authActive: true
       body:
         body: null
@@ -628,7 +714,8 @@ x-hoppscotch-dropped-requests:
     request:
       v: '17'
       auth:
-        authType: inherit
+        token: ''
+        authType: bearer
         authActive: true
       body:
         body: |-
@@ -657,3 +744,8 @@ x-hoppscotch-dropped-requests:
       preRequestScript: ''
       requestVariables: []
       id: cmrm5y8l713ktet1jmda3cign
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

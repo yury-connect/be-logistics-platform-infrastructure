@@ -36,7 +36,54 @@
             "example": "true",
             "description": "Предварительно УДАЛИТЬ ВСЁ!"
           }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
+      }
+    },
+    "/realms/logistics-platform/protocol/openid-connect/token": {
+      "post": {
+        "summary": "KeyKloack-GetToken",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "operationId": "KeyKloack_GetToken",
+        "tags": [
+          "Cargo-Service"
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "client_id": {
+                    "type": "string",
+                    "example": "logistics-gateway"
+                  },
+                  "username": {
+                    "type": "string",
+                    "example": "admin-platform"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "1234"
+                  },
+                  "grant_type": {
+                    "type": "string",
+                    "example": "password"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": []
       }
     },
     "/api/v1/catalog/addresses": {
@@ -66,7 +113,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "get": {
         "summary": "Адрес -ПОЛУЧИТЬ ВСЕ",
@@ -104,6 +156,11 @@
             },
             "example": "id"
           }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -118,6 +175,11 @@
         "operationId": "___id",
         "tags": [
           "Cargo-Service/Address"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       },
       "put": {
@@ -146,7 +208,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/addresses/13": {
@@ -160,6 +227,11 @@
         "operationId": "___3",
         "tags": [
           "Cargo-Service/Address"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -185,7 +257,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "get": {
         "summary": "Локация -ПОЛУЧИТЬ ВСЕ",
@@ -223,6 +300,11 @@
             },
             "example": "id"
           }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -237,6 +319,11 @@
         "operationId": "___id_2",
         "tags": [
           "Cargo-Service/Location"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -256,7 +343,12 @@
           "content": {
             "application/json": {}
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/dimensions": {
@@ -281,7 +373,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "get": {
         "summary": "Габариты -ПОЛУЧИТЬ ВСЕ",
@@ -319,6 +416,11 @@
             },
             "example": "id"
           }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -333,6 +435,11 @@
         "operationId": "___id_3",
         "tags": [
           "Cargo-Service/Dimension"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       },
       "put": {
@@ -371,6 +478,11 @@
             },
             "example": "id"
           }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -385,6 +497,11 @@
         "operationId": "___7",
         "tags": [
           "Cargo-Service/Dimension"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -429,7 +546,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "get": {
         "summary": "Артикул -ПОЛУЧИТЬ ВСЕ-АГРЕГИРОВАНО",
@@ -505,7 +627,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "put": {
         "summary": "Артикул -ИЗМЕНИТЬ",
@@ -527,7 +654,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/skus/base": {
@@ -558,8 +690,13 @@
             "schema": {
               "type": "string"
             },
-            "example": "2",
+            "example": "222",
             "description": "2️⃣ кол-во на страницу"
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
           }
         ]
       }
@@ -585,7 +722,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/cargos": {
@@ -614,7 +756,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "get": {
         "summary": "просмотр имеющихся Cargo",
@@ -626,6 +773,11 @@
         "operationId": "_Cargo",
         "tags": [
           "Cargo-Service/Cargo"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -655,7 +807,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       },
       "put": {
         "summary": "Товар -ИЗМЕНИТЬ",
@@ -682,7 +839,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/cargos/301": {
@@ -711,7 +873,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/reservations": {
@@ -734,6 +901,11 @@
               "type": "string"
             },
             "example": "true"
+          }
+        ],
+        "security": [
+          {
+            "bearerAuth": []
           }
         ]
       },
@@ -765,7 +937,12 @@
               ]
             }
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     },
     "/api/v1/catalog/reservations/1/cancel": {
@@ -779,6 +956,11 @@
         "operationId": "__4",
         "tags": [
           "Cargo-Service/Reservation"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
         ]
       }
     },
@@ -912,6 +1094,9 @@
   "servers": [
     {
       "url": "<<base_url>>"
+    },
+    {
+      "url": "http://localhost:8080"
     }
   ],
   "tags": [
@@ -953,7 +1138,8 @@
       "request": {
         "v": "17",
         "auth": {
-          "authType": "inherit",
+          "token": "",
+          "authType": "bearer",
           "authActive": true
         },
         "body": {
@@ -979,7 +1165,8 @@
       "request": {
         "v": "17",
         "auth": {
-          "authType": "inherit",
+          "token": "",
+          "authType": "bearer",
           "authActive": true
         },
         "body": {
@@ -1000,5 +1187,13 @@
         "id": "cmrm5y8l713ktet1jmda3cign"
       }
     }
-  ]
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
 }
