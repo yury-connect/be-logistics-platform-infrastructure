@@ -6,7 +6,6 @@
 ### 🌐 Business API & Actuator
 | Микросервис          | HTTP Порт | Actuator Порт | Назначение                            |
 |:---------------------|:----------|:--------------|:--------------------------------------|
-| **API Gateway**      | `8080`    | `8180`        | Единая точка входа (Routing)          |
 | User Service         | `8081`    | `8181`        | Управление пользователями             |
 | Delivery Service     | `8082`    | `8182`        | Оркестрация заказов и доставок        |
 | Transport Service    | `8083`    | `8183`        | Управление автопарком и водителями    |
@@ -14,6 +13,7 @@
 | Cargo Service        | `8085`    | `8185`        | Управление товарами (Каталог/Резервы) |
 | Notification Service | `8086`    | `8186`        | Уведомления (Email, SMS)              |
 | Reporting Service    | `8087`    | `8187`        | Генерация аналитики                   |
+| **API Gateway**      | `8088`    | `8288`        | Единая точка входа (Routing)          |
 
 ### 🗄️ Базы данных & Инфраструктура  
 | Сервис                | Порт    | Тип       | Примечание                                        |
@@ -25,14 +25,15 @@
 | **DbGate**            | `5051`  | Контейнер | Веб-интерфейс для управления PostgreSQL и MongoDB |
 
 ### 🔐 Identity, Admin & Observability  
-| Сервис            | Порт   | Назначение                            |
-|:------------------|:-------|:--------------------------------------|
-| **Keycloak**      | `8080` | Identity & Access Management (SSO)    |
-| **Kafka UI**      | `8090` | Веб-интерфейс для брокера сообщений   |
-| **Prometheus**    | `9090` | Сбор и агрегация метрик               |
-| **Kafka**         | `9092` | Брокер сообщений                      |
-| **Grafana**       | `3000` | Дашборды мониторинга                  |
-| **Loki**          | `3100` | Агрегация логов                       |
+| Сервис            | Порт   | Назначение                             |
+|:------------------|:-------|:---------------------------------------|
+| **Keycloak**      | `8080` | Identity & Access Management (SSO)     |
+| **Kafka UI**      | `8090` | Веб-интерфейс для брокера сообщений    |
+| **Prometheus**    | `9090` | Сбор и агрегация метрик (планируется)  |
+| **Kafka**         | `9092` | Брокер сообщений (внутренний)          |
+| **Kafka**         | `9094` | Брокер сообщений (внешний, с хоста)    |
+| **Grafana**       | `3000` | Дашборды мониторинга (планируется)     |
+| **Loki**          | `3100` | Агрегация логов (планируется)          |
 
 ### 🗄️ Доступ к базам данных через DbGate  
 | База данных    | Подключение через DbGate                                        |
@@ -59,12 +60,20 @@
 
 | **Сервис**                  | **Адрес для подключения с ПК (IDEA, DBeaver, браузер)** | **Адрес внутри сети Docker (между контейнерами)** |
 |:----------------------------|:--------------------------------------------------------|:--------------------------------------------------|
+| **API Gateway**             | [`http://localhost:8088`](http://localhost:8088)        | `api-gateway:8080`                                |
+| **Keycloak**                | [`http://localhost:8080`](http://localhost:8080)        | `keycloak:8080`                                   |
 | **Kafka (для Java/Spring)** | `localhost:9094`                                        | `kafka:9092`                                      |
-| **Kafka UI**                | [http://localhost:8090](http://localhost:8090/)         | —                                                 |
+| **Kafka UI**                | [`http://localhost:8090`](http://localhost:8090)        | —                                                 |
 | **PostgreSQL (Логистика)**  | `localhost:5433`                                        | `postgres:5432`                                   |
 | **PostgreSQL (Keycloak)**   | `localhost:5434`                                        | `postgres-keycloak:5432`                          |
 | **MongoDB**                 | `localhost:27018`                                       | `mongodb:27017`                                   |
-| **Keycloak**                | [http://localhost:8080](http://localhost:8080/)         | `keycloak:8080`                                   |
-| **DBGate (БД Клиент)**      | [http://localhost:5051](http://localhost:5051/)         | —                                                 |
+| **DBGate (БД Клиент)**      | [`http://localhost:5051`](http://localhost:5051)        | —                                                 |
+| **User Service**            | `localhost:8081`                                        | `user-service:8081`                               |
+| **Delivery Service**        | `localhost:8082`                                        | `delivery-service:8082`                           |
+| **Transport Service**       | `localhost:8083`                                        | `transport-service:8083`                          |
+| **Payment Service**         | `localhost:8084`                                        | `payment-service:8084`                            |
+| **Cargo Service**           | `localhost:8085`                                        | `cargo-service:8085`                              |
+| **Notification Service**    | `localhost:8086`                                        | `notification-service:8086`                       |
+| **Reporting Service**       | `localhost:8087`                                        | `reporting-service:8087`                          |
 
 ---
